@@ -1,0 +1,136 @@
+---
+import Main from "../layouts/Main.astro";
+import Cards from "../components/Cards.astro";
+
+interface BlogModule {
+  frontmatter: {
+    title: string;
+    date: string;
+  };
+  url: string;
+}
+
+const profilePicture = "https://i.imgur.com/JPGFE75.jpg"
+
+const blogModules = import.meta.glob<BlogModule>("../pages/blogs/*.md");
+
+const blogs = await Promise.all(
+  Object.values(blogModules).map((loader) => loader())
+);
+
+// Optional: sort blogs by date (if you use frontmatter `date`)
+blogs.sort(
+  (a, b) =>
+    new Date(b.frontmatter.date).getTime() -
+    new Date(a.frontmatter.date).getTime()
+);
+---
+<Main title="Cristian Ungureanu">
+	<div class="profile">
+		<img alt="Cristian Ungureanu's website" width="100px" height="100px" src={profilePicture} class="profile__picture" />
+		<div class="profile__details">
+			<h1>Cristian Ungureanu</h1>
+			<h2>Middle Frontend Developer at Everymatrix</h2>
+			<p>
+				Helping developers be excellent and succeed at building scalable products.
+			</p>
+		</div>
+	</div>
+	<Cards cards={[
+		{
+			title: "Here are my guiding philosophies for life",
+			gradientFrom: "#818cf8",
+			gradientTo: "#d8b4fe",
+			to: "/philosophies"
+		},
+		{
+			title: "A summary of my work history",
+			gradientFrom: "#fde68a",
+			gradientTo: "#fca5a5",
+			to: "/work-summary"
+		},
+		{
+			title: "What I do beyond technology",
+			gradientFrom: "#6ee7b7",
+			gradientTo: "#9333ea",
+			to: "/beyond-tech"
+		},
+	]}/>
+
+	<div class="featured-blogs">
+		<h3 class="featured-blogs__title">Featured blogs</h3>
+		<p class="featured-blogs__description">
+			Opionion pieces that will change everything you know about web development.
+		</p>
+	</div>
+
+	<ol class="blogs">
+	{blogs.map((blog) => (
+		<li class="blogs__list">
+			<a class="blog__link" href={blog.url}>
+				{blog.frontmatter.title}
+			</a>
+		</li>
+	))}
+	</ol>
+
+</Main>
+
+<style>
+  .profile {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 1rem 0 3rem 0;
+  }
+
+  .profile__details {
+    flex: 1 0 300px;
+  }
+
+  .profile__details > h1 {
+    margin-top: 0;
+  }
+
+  .profile__picture {
+    border-radius: 50%;
+    margin: 0 2rem 1rem 0;
+  }
+
+  .featured-blogs {
+    margin: 0;
+    padding: 3rem 0 0 0;
+  }
+  .featured-blogs__title {
+    font-size: 2rem;
+    color: var(--gray-900);
+  }
+
+  .featured-blogs__description {
+    margin-top: -1.2rem;
+  }
+
+  .blogs {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  .blogs__list {
+    border-bottom: 1px solid;
+    border-color: var(--gray-200);
+  }
+
+  .blog__link {
+    opacity: 1;
+    height: 100%;
+    display: block;
+    padding: 1rem 0;
+    color: var(--gray-200);
+    text-decoration: none;
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  .blog__link:hover {
+    opacity: 0.7;
+  }
+</style>

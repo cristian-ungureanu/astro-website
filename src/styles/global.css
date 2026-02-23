@@ -1,0 +1,51 @@
+html {
+    --background: white;
+    --gray-200: #222222;
+    --gray-400: #444444;
+    --gray-600: #333333;
+    --gray-900: #111111;
+}
+
+html.dark {
+    --background: black;
+    --gray-200: #eaeaea;
+    --gray-400: #acacac;
+    --gray-600: #ffffff;
+    --gray-900: #fafafa;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    padding: 0 0.5rem;
+
+    color: var(--gray-600);
+    background-color: var(--background);
+}
+
+h1 {
+    font-size: 3rem;
+    line-height: 1;
+}
+
+h1 + h2 {
+    font-size: 1.1rem;
+    margin-top: -1.4rem;
+    opacity: 0.9;
+    font-weight: 400;
+}
+
+main {
+    max-width: 40rem;
+    margin: auto;
+}
+
+p,
+li {
+    font-size: 1rem;
+    color: var(--gray-900);
+    opacity: 0.8;
+}
+
+li {
+    margin: 1rem 0;
+}
