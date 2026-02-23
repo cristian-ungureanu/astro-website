@@ -56,11 +56,14 @@ import ThemeToggler from "./ThemeToggler.astro"
 </style>
 
 <script>
-    const { pathname } = window.location;
+    const normalize = (path: string) =>
+        path.replace(/\/+$/, "") || "/";
+
+    const pathname = normalize(window.location.pathname);
 
     const activeNavigationElement = document.querySelector(
         `nav a[href="${pathname}"]`
-    )
+    );
 
     if (activeNavigationElement) {
         activeNavigationElement.classList.add("active");
