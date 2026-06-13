@@ -1,0 +1,33 @@
+---
+type Props = {
+    title: string;
+    subtitle: string;
+    poster: string | undefined;
+}
+
+const { title, subtitle, poster } = Astro.props;
+---
+
+{poster && (
+    <figure class="figure">
+        <img src={poster} alt={title} width="100%" height="480px" class="figure__image">
+    </figure>
+)}
+
+<h1>{title}</h1>
+<h2>{subtitle}</h2>
+
+<style>
+    h1 + h2 {
+        margin-bottom: 3rem;
+    }
+
+    .figure {
+        margin: 0;
+    }
+
+    .figure__image {
+        max-width: 100%;
+        border-radius: 10px;
+    }
+</style>

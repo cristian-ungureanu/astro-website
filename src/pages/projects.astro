@@ -1,0 +1,66 @@
+---
+import Main from "../layouts/Main.astro";
+import PageHeader from "../components/PageHeader.astro";
+import Cards from "../components/Cards.astro";
+
+const projects = [
+	{
+		to: "/projects/movie-db",
+		title: "Movie DB",
+		description: "A React + TMDB movie browser with search, genre filters, and a favourites list.",
+		gradientFrom: "#93c5fd",
+		gradientTo: "#60a5fa",
+	},
+	{
+		to: "/projects/mystock-photos",
+		title: "MyStock.photos",
+		description: "A WordPress site for browsing and importing CC0 stock photography.",
+		gradientFrom: "#fde68a",
+		gradientTo: "#fca5a5",
+	},
+	{
+		to: "/projects/cadourilafix",
+		title: "Cadourilafix.ro",
+		description: "A WordPress + React gift-recommendation flow powered by ChatGPT.",
+		gradientFrom: "#818cf8",
+		gradientTo: "#d8b4fe",
+	},
+	{
+		to: "/projects/meme-block",
+		title: "Meme Block",
+		description: "A React-powered Gutenberg block for adding memes to WordPress posts, built during a hackathon.",
+		gradientFrom: "#6ee7b7",
+		gradientTo: "#9333ea",
+	},
+	{
+		to: "/projects/customizer-repeater",
+		title: "Customizer Repeater",
+		description: "A repeatable-field control for the WordPress Customizer, among the first of its kind.",
+		gradientFrom: "#93c5fd",
+		gradientTo: "#60a5fa",
+	},
+	{
+		to: "/projects/peers",
+		title: "Peers.com",
+		description: "A large WordPress build with a content structure designed for non-technical editors.",
+		gradientFrom: "#fde68a",
+		gradientTo: "#fca5a5",
+	},
+	{
+		to: "/projects/presentational-sites",
+		title: "Presentational sites",
+		description: "A handful of WordPress brochure sites, each built to a different client's specification.",
+		gradientFrom: "#818cf8",
+		gradientTo: "#d8b4fe",
+	},
+];
+---
+<Main title="Cristian Ungureanu | Projects">
+	<PageHeader
+		title="Projects"
+		subtitle="A selection of work and personal projects I've built over the years."
+		poster="/images/coding.jpg"
+	/>
+
+	<Cards cards={projects} />
+</Main>

@@ -8,7 +8,13 @@ import ThemeToggler from "./ThemeToggler.astro"
             <a href="/">Home</a>
         </li>
         <li>
-            <a href="/philosophies">Philosophies</a>
+            <a href="/about">About</a>
+        </li>
+        <li>
+            <a href="/experience">Experience</a>
+        </li>
+        <li>
+            <a href="/projects">Projects</a>
         </li>
         <li>
             <a href="/beyond-tech">Beyond technology</a>
@@ -50,8 +56,10 @@ import ThemeToggler from "./ThemeToggler.astro"
     }
 
     a.active {
-        background: var(--gray-900);
-        color: var(--background);
+        background: linear-gradient(to right,
+            color-mix(in srgb, var(--grad-3-from) 35%, transparent),
+            color-mix(in srgb, var(--grad-3-to) 35%, transparent));
+        color: var(--gray-900);
     }
 </style>
 

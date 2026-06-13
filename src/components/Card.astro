@@ -2,15 +2,17 @@
 export type Props = {
     to: string;
     title: string;
+    description?: string;
     gradientFrom: string;
     gradientTo: string;
 }
 
-const {to, title, gradientFrom, gradientTo} = Astro.props;
+const {to, title, description, gradientFrom, gradientTo} = Astro.props;
 ---
 <a href={to} class="card">
     <div class="card__inner">
         <div class="card__title">{title}</div>
+        {description && <p class="card__description">{description}</p>}
         <div class="card__footer">&rarr;</div>
     </div>
 </a>
@@ -50,5 +52,13 @@ const {to, title, gradientFrom, gradientTo} = Astro.props;
         color: var(--gray-900);
         font-weight: 500;
         line-height: 1.7rem;
+    }
+
+    .card__description {
+        margin: 0.5rem 0 0;
+        font-size: 0.9rem;
+        color: var(--gray-900);
+        opacity: 0.8;
+        line-height: 1.4;
     }
 </style>
