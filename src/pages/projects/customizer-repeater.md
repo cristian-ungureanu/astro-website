@@ -1,12 +1,15 @@
 ---
 layout: ../../layouts/ProjectPage.astro
 title: "Customizer Repeater"
-subtitle: "A repeatable-field control for the WordPress Customizer, among the first of its kind."
+subtitle: "A repeatable-field control for the WordPress Customizer, still working a decade after release."
+video: "/videos/customizer-repeater-demo.mp4"
 ---
 
 ### What it is
 
 The WordPress Customizer ships with simple controls — text, color, image — but no built-in way to manage a *list* of repeatable items, like a set of slides or social links. Customizer Repeater adds that missing control, letting theme and plugin authors add, remove, and reorder groups of fields directly inside the live Customizer preview.
+
+Released in 2016, it's now over **10 years old** and, while archived, still works — sitting at **78 stars** and **53 forks** on GitHub a decade later.
 
 ### Tech stack
 
