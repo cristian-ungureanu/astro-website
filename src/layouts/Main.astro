@@ -1,6 +1,7 @@
 ---
 import Footer from "../components/Footer.astro";
 import NavigationBar from "../components/NavigationBar.astro";
+import CookieConsent from "../components/CookieConsent.astro";
 import "../styles/global.css";
 
 type Props = {
@@ -85,5 +86,6 @@ const imageURL = new URL(image, Astro.site);
             </main>
             <Footer />
         </div>
+        <CookieConsent />
 	</body>
 </html>
