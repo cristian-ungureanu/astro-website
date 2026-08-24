@@ -3,11 +3,12 @@ layout: ../../layouts/ProjectPage.astro
 title: "Movie DB"
 subtitle: "A React + TMDB movie browser with search, genre filters, and a favourites list."
 poster: "/images/movie-db.jpg"
+imageAlt: "Movie DB app homepage with a movie poster backdrop, search bar, and genre filters"
 ---
 
 ### What it is
 
-A single-page frontend for [The Movie Database (TMDB)](https://www.themoviedb.org/) API. Visitors can browse popular movies, search by title, filter by genre, page through results, and save favourites for later — all without an account, since the watchlist lives in the browser.
+A single-page frontend for [The Movie Database (TMDB)](https://www.themoviedb.org/) API. Visitors can browse popular movies, search by title, filter by genre, page through results, and save favourites for later, all without an account, since the watchlist lives in the browser.
 
 ### Tech stack
 

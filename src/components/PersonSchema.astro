@@ -1,0 +1,29 @@
+---
+const schema = {
+	"@context": "https://schema.org",
+	"@type": "Person",
+	"name": "Cristian Ungureanu",
+	"url": "https://cristianungureanu.dev",
+	"image": "https://cristianungureanu.dev/images/profile.jpg",
+	"jobTitle": "Frontend Developer",
+	"description": "Freelance React and frontend developer with 10+ years of experience building web applications with React, JavaScript, and WordPress.",
+	"address": {
+		"@type": "PostalAddress",
+		"addressLocality": "Bucharest",
+		"addressCountry": "RO",
+	},
+	"sameAs": [
+		"https://linkedin.com/in/cristi-ungureanu",
+		"https://github.com/cristian-ungureanu",
+	],
+	"knowsAbout": [
+		"React.js", "JavaScript", "TypeScript", "Svelte", "Stencil",
+		"AngularJS", "Vue.js", "HTML & CSS", "PHP", "WordPress",
+	],
+	"worksFor": {
+		"@type": "Organization",
+		"name": "EveryMatrix",
+	},
+};
+---
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

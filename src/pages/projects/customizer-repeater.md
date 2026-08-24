@@ -7,20 +7,20 @@ video: "/videos/customizer-repeater-demo.mp4"
 
 ### What it is
 
-The WordPress Customizer ships with simple controls — text, color, image — but no built-in way to manage a *list* of repeatable items, like a set of slides or social links. Customizer Repeater adds that missing control, letting theme and plugin authors add, remove, and reorder groups of fields directly inside the live Customizer preview.
+The WordPress Customizer ships with simple controls (text, color, image) but no built-in way to manage a *list* of repeatable items, like a set of slides or social links. Customizer Repeater adds that missing control, letting theme and plugin authors add, remove, and reorder groups of fields directly inside the live Customizer preview.
 
-Released in 2016, it's now over **10 years old** and, while archived, still works — sitting at **78 stars** and **53 forks** on GitHub a decade later.
+Released in 2016, it's now over **10 years old** and, while archived, still works. It sits at **78 stars** and **53 forks** on GitHub a decade later.
 
 ### Tech stack
 
 - **PHP** for the `WP_Customize_Control` subclass and server-side rendering
 - **JavaScript** (Underscore.js templates, as used natively by the Customizer) for the add/remove/reorder UI
-- Integrates with the existing **WordPress Customizer API** — no extra admin screens or database tables
+- Integrates with the existing **WordPress Customizer API**, no extra admin screens or database tables
 
 ### What it set out to achieve
 
 - Fill a real gap in the Customizer API at a time when no other public control did this
 - Keep the control self-contained and easy to drop into any theme or plugin
-- Get it in front of the WordPress community early — it went on to be well received and reused by other developers
+- Get it in front of the WordPress community early: it went on to be well received and reused by other developers
 
 [See it on GitHub](https://github.com/cristian-ungureanu).

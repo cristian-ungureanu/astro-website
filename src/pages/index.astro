@@ -1,19 +1,23 @@
 ---
 import Main from "../layouts/Main.astro";
 import Cards from "../components/Cards.astro";
+import PersonSchema from "../components/PersonSchema.astro";
 
 const profilePicture = "/images/profile.jpg"
+const description = "Cristian Ungureanu, freelance React developer based in Bucharest, Romania. 10+ years of experience building web applications with React, JavaScript, and WordPress. Available for hire.";
 ---
-<Main title="Cristian Ungureanu">
+<Main title="Cristian Ungureanu | Freelance React & Frontend Developer" description={description}>
+	<PersonSchema />
 	<div class="profile">
-		<img alt="Cristian Ungureanu" width="160px" height="160px" src={profilePicture} class="profile__picture" />
+		<img alt="Cristian Ungureanu, freelance React and frontend developer" width="160" height="160" src={profilePicture} class="profile__picture" fetchpriority="high" />
 		<div class="profile__details">
 			<h1>Cristian Ungureanu</h1>
-			<h2>Software Developer at EveryMatrix</h2>
+			<h2>Freelance React Developer &amp; Software Developer at EveryMatrix</h2>
 			<p>
-				Frontend Developer with 10+ years of hands-on experience building and
-				maintaining scalable web applications. Strong background in modern
-				JavaScript frameworks, UI architecture, and automated testing.
+				Frontend developer with 10+ years of hands-on experience building and
+				maintaining web applications. Strong background in React and other
+				modern JavaScript frameworks, UI architecture, and automated testing.
+				Available for freelance work.
 			</p>
 		</div>
 	</div>

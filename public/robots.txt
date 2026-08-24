@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://cristianungureanu.dev/sitemap-index.xml

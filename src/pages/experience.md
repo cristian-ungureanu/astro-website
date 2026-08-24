@@ -3,9 +3,10 @@ layout: ../layouts/Page.astro
 title: "Experience"
 subtitle: "10+ years building and shipping production frontend, from WordPress to React."
 poster: "/images/work-summary.jpg"
+imageAlt: "Silhouette of a person against a sunset sky with birds in flight"
 ---
 
-### EveryMatrix — Middle Frontend Developer
+### EveryMatrix, Middle Frontend Developer
 *February 2024 – Present*
 
 **UXMatrix** (April 2025 – Present)
@@ -20,7 +21,7 @@ poster: "/images/work-summary.jpg"
 - Developed and maintained the Unified BackOffice (UBO) for the GamMatrix platform using AngularJS.
 - Contributed to the early stages of a full product rewrite, supporting architectural and technical modernization.
 
-### ThemeIsle — Frontend Developer
+### ThemeIsle, Frontend Developer
 *October 2014 – November 2023*
 
 - Developed new features and resolved bugs using PHP, JavaScript, and React.
@@ -29,7 +30,7 @@ poster: "/images/work-summary.jpg"
 - Led major release planning by gathering feedback from users and internal teams.
 - Provided direct user support via the community Facebook group, improving user satisfaction and feedback loops.
 
-### AHS LLC — Junior Web Developer
+### AHS LLC, Junior Web Developer
 *June 2014 – October 2014*
 
-- Secured a full-time position after an internship gaining hands-on experience with WordPress — the only candidate out of 10 selected for the full-time role based on performance.
+- Secured a full-time position after an internship gaining hands-on experience with WordPress, the only candidate out of 10 selected for the full-time role based on performance.

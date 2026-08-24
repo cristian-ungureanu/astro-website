@@ -7,12 +7,13 @@ type Props = MarkdownLayoutProps<{
     title: string;
     subtitle: string;
     poster?: string;
+    imageAlt?: string;
 }>
 
-const { title, subtitle, poster } = Astro.props.frontmatter;
+const { title, subtitle, poster, imageAlt } = Astro.props.frontmatter;
 ---
 
-<Main title={`Cristian Ungureanu | ${title}`}>
-    <PageHeader title={title} subtitle={subtitle} poster={poster} />
+<Main title={`Cristian Ungureanu | ${title}`} description={subtitle} image={poster}>
+    <PageHeader title={title} subtitle={subtitle} poster={poster} imageAlt={imageAlt} />
     <slot />
 </Main>

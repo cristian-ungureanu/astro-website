@@ -3,10 +3,23 @@ type Props = {
     title: string;
     subtitle: string;
     poster: string | undefined;
+    imageAlt: string | undefined;
     video: string | undefined;
 }
 
-const { title, subtitle, poster, video } = Astro.props;
+// Intrinsic dimensions of each poster, used to reserve layout space and avoid shift while it loads.
+const POSTER_DIMENSIONS: Record<string, [number, number]> = {
+    "/images/philosophies.jpg": [1280, 1280],
+    "/images/work-summary.jpg": [1024, 683],
+    "/images/road-trip.jpg": [1024, 683],
+    "/images/coding.jpg": [1023, 685],
+    "/images/movie-db.jpg": [1280, 715],
+    "/images/mystock-photos.jpg": [1280, 700],
+    "/images/cadourilafix.jpg": [1000, 574],
+};
+
+const { title, subtitle, poster, imageAlt, video } = Astro.props;
+const [posterWidth, posterHeight] = (poster && POSTER_DIMENSIONS[poster]) || [1280, 720];
 ---
 
 {video && (
@@ -17,7 +30,7 @@ const { title, subtitle, poster, video } = Astro.props;
 )}
 {!video && poster && (
     <figure class="figure">
-        <img src={poster} alt={title} class="figure__image">
+        <img src={poster} alt={imageAlt || title} width={posterWidth} height={posterHeight} fetchpriority="high" class="figure__image">
     </figure>
 )}
 

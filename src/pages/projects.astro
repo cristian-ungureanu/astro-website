@@ -54,12 +54,15 @@ const projects = [
 		gradientTo: "#d8b4fe",
 	},
 ];
+
+const description = "A portfolio of React and WordPress projects built by freelance frontend developer Cristian Ungureanu, including web apps, browser plugins, and client websites.";
 ---
-<Main title="Cristian Ungureanu | Projects">
+<Main title="Cristian Ungureanu | Projects" description={description}>
 	<PageHeader
 		title="Projects"
 		subtitle="A selection of work and personal projects I've built over the years."
 		poster="/images/coding.jpg"
+		imageAlt="Laptop displaying code in an editor on a desk"
 	/>
 
 	<Cards cards={projects} />

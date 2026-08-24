@@ -5,9 +5,18 @@ import "../styles/global.css";
 
 type Props = {
 	title: string;
+	description?: string;
+	image?: string;
+	type?: "website" | "article";
 }
 
-const { title } = Astro.props;
+const DEFAULT_DESCRIPTION = "Cristian Ungureanu, freelance React and frontend developer based in Bucharest, Romania. 10+ years of experience building web applications with React, JavaScript, and WordPress.";
+const DEFAULT_IMAGE = "/images/profile.jpg";
+
+const { title, description = DEFAULT_DESCRIPTION, image = DEFAULT_IMAGE, type = "website" } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const imageURL = new URL(image, Astro.site);
 ---
 <html lang="en">
 	<head>
@@ -16,8 +25,22 @@ const { title } = Astro.props;
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-        <meta name="description" content="Cristian Ungureanu — Frontend Developer with 10+ years of experience in React, JavaScript, and WordPress. Portfolio, experience, and projects." />
+        <meta name="description" content={description} />
+        <link rel="canonical" href={canonicalURL} />
 		<title>{title}</title>
+
+        <meta property="og:type" content={type} />
+        <meta property="og:site_name" content="Cristian Ungureanu" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={canonicalURL} />
+        <meta property="og:image" content={imageURL} />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={imageURL} />
+
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link
@@ -59,10 +82,12 @@ const { title } = Astro.props;
 		</script>
 	</head>
 	<body>
-        <main>
+        <div class="page">
             <NavigationBar />
-            <slot />
+            <main>
+                <slot />
+            </main>
             <Footer />
-        </main>
+        </div>
 	</body>
 </html>
