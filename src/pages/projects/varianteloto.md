@@ -6,6 +6,8 @@ poster: "/images/varianteloto.jpg"
 imageAlt: "Variante Loto homepage with a headline about statistics-based number variants and a cluster of decorative lottery balls"
 ---
 
+*Built with [Claude Code](https://claude.com/claude-code), Anthropic's AI coding agent — I directed the architecture, reviewed every change, and made the product decisions; Claude wrote and tested the code.*
+
 ### What it is
 
 [VarianteLoto.ro](https://varianteloto.ro) analyses the full public history of Romanian Loto 6/49 draws and turns it into four suggested number variants, sent by email twice a week (Thursday and Sunday, the subscriber's choice) alongside the current jackpot and prize values. The site itself carries the always-on part: full-history statistics (hottest/coldest numbers, overdue numbers, most frequent pairs), the latest draws, and a subscribe form with a double opt-in flow and zero database.
@@ -24,4 +26,4 @@ imageAlt: "Variante Loto homepage with a headline about statistics-based number 
 - A 100/100/100/100 Lighthouse score across every page, including a cookie-consent-gated Google Analytics setup that still gets detected as installed (Google's own installation checker only looks for a tag that's present unconditionally, which pushed the consent implementation from "load nothing until accepted" to Google's official Consent Mode pattern)
 - Subscription and delivery that stay correct under edge cases most toy versions skip: no duplicate confirmation emails for an already-subscribed address, no repeated numbers across the four variants in a single email, incremental re-scraping instead of re-fetching decades of history on every run
 
-[Data + email pipeline](https://github.com/cristian-ungureanu/loto) · [Website source](https://github.com/cristian-ungureanu/loto-site)
+The repos are private (subscriber data involved) — [see the live site](https://varianteloto.ro) instead.
