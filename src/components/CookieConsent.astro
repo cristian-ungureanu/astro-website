@@ -75,17 +75,31 @@ const GA_MEASUREMENT_ID = "G-LWV8TEX05E";
 <script define:vars={{ GA_MEASUREMENT_ID }}>
 	const CONSENT_KEY = "analytics-consent";
 
+	window.dataLayer = window.dataLayer || [];
+	function gtag() { window.dataLayer.push(arguments); }
+	window.gtag = gtag;
+
+	// Google Consent Mode: declare a default (denied) state on every page
+	// load, before the library ever loads, so hits carry an explicit signal
+	// instead of none at all. Required for EU traffic to be counted in
+	// standard reports rather than silently excluded.
+	gtag("consent", "default", {
+		analytics_storage: "denied",
+		ad_storage: "denied",
+		ad_user_data: "denied",
+		ad_personalization: "denied",
+	});
+
 	function loadGoogleAnalytics(id) {
 		if (!id || id.includes("XXXXXXXXXX")) return;
+
+		gtag("consent", "update", { analytics_storage: "granted" });
 
 		const script = document.createElement("script");
 		script.async = true;
 		script.src = `https://www.googletagmanager.com/gtag/js?id=${id}`;
 		document.head.appendChild(script);
 
-		window.dataLayer = window.dataLayer || [];
-		function gtag() { window.dataLayer.push(arguments); }
-		window.gtag = gtag;
 		gtag("js", new Date());
 		gtag("config", id, { anonymize_ip: true });
 	}
