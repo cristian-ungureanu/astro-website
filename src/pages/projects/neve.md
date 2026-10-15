@@ -2,6 +2,8 @@
 layout: ../../layouts/ProjectPage.astro
 title: "Neve"
 subtitle: "A fast, AMP-ready WordPress theme with 200,000+ active installs, built as part of the Themeisle team."
+poster: "/images/neve.jpg"
+imageAlt: "Neve theme homepage demo with a bold hero headline and product mockups"
 ---
 
 ### What it is
