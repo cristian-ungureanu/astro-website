@@ -3,6 +3,7 @@ import Main from "../layouts/Main.astro";
 import PageHeader from "../components/PageHeader.astro";
 import Cards from "../components/Cards.astro";
 
+// Ordered newest-first by when each project was built/active.
 const projects = [
 	{
 		to: "/projects/varianteloto/",
@@ -12,6 +13,13 @@ const projects = [
 		gradientTo: "#175c34",
 	},
 	{
+		to: "/projects/peers/",
+		title: "Peers.com",
+		description: "A large WordPress build with a content structure designed for non-technical editors.",
+		gradientFrom: "#fde68a",
+		gradientTo: "#fca5a5",
+	},
+	{
 		to: "/projects/movie-db/",
 		title: "Movie DB",
 		description: "A React + TMDB movie browser with search, genre filters, and a favourites list.",
@@ -19,16 +27,23 @@ const projects = [
 		gradientTo: "#60a5fa",
 	},
 	{
-		to: "/projects/mystock-photos/",
-		title: "MyStock.photos",
-		description: "A WordPress site for browsing and importing CC0 stock photography.",
-		gradientFrom: "#fde68a",
-		gradientTo: "#fca5a5",
+		to: "/projects/neve/",
+		title: "Neve",
+		description: "A WordPress theme with 200,000+ active installs - PHP, React, and a Customizer-driven feature set, built with the Themeisle team.",
+		gradientFrom: "#5eead4",
+		gradientTo: "#0d9488",
 	},
 	{
 		to: "/projects/cadourilafix/",
 		title: "Cadourilafix.ro",
 		description: "A WordPress + React gift-recommendation flow powered by ChatGPT.",
+		gradientFrom: "#818cf8",
+		gradientTo: "#d8b4fe",
+	},
+	{
+		to: "/projects/presentational-sites/",
+		title: "Presentational sites",
+		description: "A handful of WordPress brochure sites, each built to a different client's specification.",
 		gradientFrom: "#818cf8",
 		gradientTo: "#d8b4fe",
 	},
@@ -47,18 +62,11 @@ const projects = [
 		gradientTo: "#60a5fa",
 	},
 	{
-		to: "/projects/peers/",
-		title: "Peers.com",
-		description: "A large WordPress build with a content structure designed for non-technical editors.",
+		to: "/projects/mystock-photos/",
+		title: "MyStock.photos",
+		description: "A WordPress site for browsing and importing CC0 stock photography.",
 		gradientFrom: "#fde68a",
 		gradientTo: "#fca5a5",
-	},
-	{
-		to: "/projects/presentational-sites/",
-		title: "Presentational sites",
-		description: "A handful of WordPress brochure sites, each built to a different client's specification.",
-		gradientFrom: "#818cf8",
-		gradientTo: "#d8b4fe",
 	},
 ];
 
